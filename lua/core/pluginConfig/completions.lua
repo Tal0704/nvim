@@ -12,8 +12,7 @@ cmp.setup({
 			  vim.fn.feedkeys('	', 'nt')
 		  end
 	  end,
-		  -- cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-	  ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+      ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
       ['<C-y>'] = cmp.config.disable,
       ['<C-e>'] = cmp.mapping({
@@ -35,4 +34,3 @@ cmp.setup({
 		{name = "buffer"},
 	}),
 })
-

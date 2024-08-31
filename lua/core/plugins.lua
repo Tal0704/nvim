@@ -20,8 +20,10 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
 	use 'morhetz/gruvbox'
+	use 'rhysd/vim-color-spring-night'
 	use 'jiangmiao/auto-pairs'
 	use 'tpope/vim-surround'
+	use 'tpope/vim-fugitive'
 	use 'nvim-treesitter/nvim-treesitter'
 	use {
 		"williamboman/mason.nvim",
@@ -30,11 +32,10 @@ return require('packer').startup(function(use)
 	}
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
-	use 'utilyre/barbecue.nvim'
-	use 'numToStr/Comment.nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'christoomey/vim-tmux-navigator'
-	use 'matveyt/neoclip'
+
+  -- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require('packer').sync()
 	end

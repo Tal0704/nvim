@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "clangd"}
+	ensure_installed = {"lua_ls", "clangd", "zls"}
 })
 
 local on_attach = function(_, _)
@@ -30,9 +30,3 @@ require("lspconfig").zls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
-
---vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
--- vim.lsp.handlers.signature_help, {
---   -- Use a sharp border with `FloatBorder` highlights
---   border = "single"
--- })
