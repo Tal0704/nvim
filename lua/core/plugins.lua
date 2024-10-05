@@ -20,6 +20,9 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
 	use 'morhetz/gruvbox'
+	use 'rebelot/kanagawa.nvim'
+	use 'mfussenegger/nvim-dap'
+
 	use 'rhysd/vim-color-spring-night'
 	use 'jiangmiao/auto-pairs'
 	use 'tpope/vim-surround'

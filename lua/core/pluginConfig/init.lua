@@ -1,4 +1,4 @@
-require("core.pluginConfig.gruvbox")
+require("core.pluginConfig.kanagawa")
 require("core.pluginConfig.lualine")
 require("core.pluginConfig.nvim-tree")
 require("core.pluginConfig.treesitter")

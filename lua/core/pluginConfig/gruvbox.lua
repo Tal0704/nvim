@@ -1,3 +1,3 @@
 vim.o.termguicolors = true
 vim.cmd [[colorscheme gruvbox]]
-vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
+-- vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
