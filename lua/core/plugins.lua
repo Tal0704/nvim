@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
 		  workspaces = {
 			{
 			  name = "GBD",
-			  path = "~/Documents/watch/",
+			  path = "~/Documents/Obsidian Vault/watches",
 			},
 		  },
 
