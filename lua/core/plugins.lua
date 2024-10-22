@@ -39,6 +39,27 @@ return require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip'
 	use 'christoomey/vim-tmux-navigator'
 
+	use({
+	  "epwalsh/obsidian.nvim",
+	  tag = "*",  -- recommended, use latest release instead of latest commit
+	  requires = {
+		-- Required.
+		"nvim-lua/plenary.nvim",
+
+	  },
+	  config = function()
+		require("obsidian").setup({
+		  workspaces = {
+			{
+			  name = "GBD",
+			  path = "~/Documents/watch/",
+			},
+		  },
+
+		})
+	  end,
+	})
+
   -- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require('packer').sync()

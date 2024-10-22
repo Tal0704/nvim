@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/tal/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/tal/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
+local package_path_str = "/home/tal/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/tal/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -128,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -149,10 +159,21 @@ _G.packer_plugins = {
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["obsidian.nvim"] = {
+    config = { "\27LJ\2\nˆ\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath\23~/Documents/watch/\tname\bGBD\nsetup\robsidian\frequire\0" },
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
+    url = "https://github.com/epwalsh/obsidian.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["vim-color-spring-night"] = {
     loaded = true,
@@ -182,6 +203,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: obsidian.nvim
+time([[Config for obsidian.nvim]], true)
+try_loadstring("\27LJ\2\nˆ\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath\23~/Documents/watch/\tname\bGBD\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+time([[Config for obsidian.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
