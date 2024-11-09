@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
 	use 'junegunn/fzf.vim'
 	use 'morhetz/gruvbox'
 	use 'rebelot/kanagawa.nvim'
+	use "neanias/everforest-nvim"
 	use 'mfussenegger/nvim-dap'
 
 	use 'rhysd/vim-color-spring-night'
@@ -51,8 +52,8 @@ return require('packer').startup(function(use)
 		require("obsidian").setup({
 		  workspaces = {
 			{
-			  name = "GBD",
-			  path = "~/Documents/Obsidian Vault/watches",
+			  name = "release",
+			  path = "~/Documents/Obsidian Vault/release",
 			},
 		  },
 
