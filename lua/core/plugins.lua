@@ -24,6 +24,13 @@ return require('packer').startup(function(use)
 	use "neanias/everforest-nvim"
 	use 'mfussenegger/nvim-dap'
 
+	use {
+	  "smjonas/inc-rename.nvim",
+	  config = function()
+		require("inc_rename").setup()
+	  end,
+	}
+
 	use 'rhysd/vim-color-spring-night'
 	use 'jiangmiao/auto-pairs'
 	use 'tpope/vim-surround'
@@ -39,6 +46,7 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'L3MON4D3/LuaSnip'
 	use 'christoomey/vim-tmux-navigator'
+	use 'ray-x/lsp_signature.nvim'
 
 	use({
 	  "epwalsh/obsidian.nvim",
