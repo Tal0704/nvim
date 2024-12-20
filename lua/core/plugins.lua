@@ -13,6 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
+	use 'catppuccin/nvim'
 	use 'nvim-tree/nvim-tree.lua'
  	use 'nvim-tree/nvim-web-devicons'
 	use {'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
@@ -22,13 +23,13 @@ return require('packer').startup(function(use)
 	use 'morhetz/gruvbox'
 	use 'rebelot/kanagawa.nvim'
 	use "neanias/everforest-nvim"
-	use 'mfussenegger/nvim-dap'
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+	use 'zaldih/themery.nvim'
+	use 'akinsho/toggleterm.nvim'
 
 	use {
-	  "smjonas/inc-rename.nvim",
-	  config = function()
-		require("inc_rename").setup()
-	  end,
+	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
+	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	use 'rhysd/vim-color-spring-night'
@@ -74,3 +75,5 @@ return require('packer').startup(function(use)
 		require('packer').sync()
 	end
 end)
+
+

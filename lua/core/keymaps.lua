@@ -14,9 +14,10 @@ vim.go.shell = "/bin/zsh"
 vim.go.mouse = "a"
 
 vim.g.mapleader  =  ","
-vim.cmd [[nmap <Leader>p :Files<CR>]]
 
-vim.keymap.set('n', '<Leader>h', ':noh<CR>')
+vim.keymap.set('n', '<esc>', ':noh<CR>')
 vim.g.camelcasemotion_key = ','
 
 vim.keymap.set('n', '<Leader>r', ':IncRename ')
+
+vim.opt.cursorline=true
