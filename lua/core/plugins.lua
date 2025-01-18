@@ -14,6 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'catppuccin/nvim'
+	use 'sainnhe/gruvbox-material'
 	use 'nvim-tree/nvim-tree.lua'
  	use 'nvim-tree/nvim-web-devicons'
 	use {'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
@@ -26,6 +27,7 @@ return require('packer').startup(function(use)
 use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 	use 'zaldih/themery.nvim'
 	use 'akinsho/toggleterm.nvim'
+	use 'airblade/vim-gitgutter'
 
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
