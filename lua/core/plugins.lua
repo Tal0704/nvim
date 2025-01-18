@@ -13,44 +13,53 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
+-- color schemes:
 	use 'catppuccin/nvim'
 	use 'sainnhe/gruvbox-material'
-	use 'nvim-tree/nvim-tree.lua'
- 	use 'nvim-tree/nvim-web-devicons'
-	use {'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
-	use 'bkad/CamelCaseMotion'
-	use 'junegunn/fzf'
-	use 'junegunn/fzf.vim'
 	use 'morhetz/gruvbox'
 	use 'rebelot/kanagawa.nvim'
 	use "neanias/everforest-nvim"
-use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 	use 'zaldih/themery.nvim'
-	use 'akinsho/toggleterm.nvim'
-	use 'airblade/vim-gitgutter'
 
+-- navigation:
+	use 'nvim-tree/nvim-tree.lua'
+ 	use 'nvim-tree/nvim-web-devicons'
+	use 'bkad/CamelCaseMotion'
+	use 'junegunn/fzf'
+	use 'junegunn/fzf.vim'
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
-
-	use 'rhysd/vim-color-spring-night'
-	use 'jiangmiao/auto-pairs'
-	use 'tpope/vim-surround'
-	use 'tpope/vim-fugitive'
-	use 'tpope/vim-commentary'
 	use 'nvim-treesitter/nvim-treesitter'
-	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig"
-	}
+	use 'christoomey/vim-tmux-navigator'
+
+-- debugging
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+
+-- git
+	use 'airblade/vim-gitgutter'
+	use 'tpope/vim-fugitive'
+
+-- lsp
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+	use "neovim/nvim-lspconfig"
+	use 'ray-x/lsp_signature.nvim'
+
+-- autocomplete
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'L3MON4D3/LuaSnip'
-	use 'christoomey/vim-tmux-navigator'
-	use 'ray-x/lsp_signature.nvim'
 
+-- misc
+	use 'akinsho/toggleterm.nvim'
+	use {'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
+	use 'jiangmiao/auto-pairs'
+	use 'tpope/vim-surround'
+	use 'tpope/vim-commentary'
+
+-- obsidian
 	use({
 	  "epwalsh/obsidian.nvim",
 	  tag = "*",  -- recommended, use latest release instead of latest commit
