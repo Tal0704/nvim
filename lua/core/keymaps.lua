@@ -13,7 +13,7 @@ vim.go.shell = "/bin/zsh"
 --set interactive mode 
 vim.go.mouse = "a"
 
-vim.g.mapleader  =  ","
+vim.g.mapleader  =  " "
 
 vim.keymap.set('n', '<esc>', ':noh<CR>')
 vim.g.camelcasemotion_key = ','
