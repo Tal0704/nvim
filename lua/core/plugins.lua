@@ -33,6 +33,11 @@ return require('packer').startup(function(use)
 	}
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'christoomey/vim-tmux-navigator'
+	use {
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { {"nvim-lua/plenary.nvim"} }
+	}
 
 -- debugging
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
@@ -73,7 +78,7 @@ return require('packer').startup(function(use)
 		  workspaces = {
 			{
 			  name = "release",
-			  path = "~/Documents/Obsidian Vault/release",
+			  path = "~/Documents/notes",
 			},
 		  },
 

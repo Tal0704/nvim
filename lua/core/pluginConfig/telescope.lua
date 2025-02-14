@@ -6,6 +6,6 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 require('telescope').setup{
 	defaults = {
-		initial_mode = 'normal'
+		initial_mode = 'insert'
 	}
 }
