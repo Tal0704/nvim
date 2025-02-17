@@ -47,10 +47,11 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-fugitive'
 
 -- lsp
+	use "neovim/nvim-lspconfig"
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
-	use "neovim/nvim-lspconfig"
 	use 'ray-x/lsp_signature.nvim'
+	use 'simrat39/rust-tools.nvim'
 
 -- autocomplete
 	use 'hrsh7th/nvim-cmp'
