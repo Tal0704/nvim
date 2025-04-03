@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 
 -- git
-	use 'airblade/vim-gitgutter'
 	use 'tpope/vim-fugitive'
 
 -- lsp
@@ -64,6 +63,10 @@ return require('packer').startup(function(use)
 	use 'jiangmiao/auto-pairs'
 	use 'tpope/vim-surround'
 	use 'tpope/vim-commentary'
+	use {
+		"AmeerTaweel/todo.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	}
 
 -- obsidian
 	use({

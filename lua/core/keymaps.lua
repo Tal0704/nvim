@@ -18,6 +18,6 @@ vim.g.mapleader  =  " "
 vim.keymap.set('n', '<esc>', ':noh<CR>')
 vim.g.camelcasemotion_key = ','
 
-vim.keymap.set('n', '<Leader>r', ':IncRename ')
+-- vim.keymap.set('n', '<Leader>r', ':IncRename ')
 
 vim.opt.cursorline=true

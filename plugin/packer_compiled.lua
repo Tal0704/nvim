@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/tal/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/tal/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
+local package_path_str = "/home/tal/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/tal/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/tal/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -210,6 +210,11 @@ _G.packer_plugins = {
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -219,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tal/.local/share/nvim/site/pack/packer/start/themery.nvim",
     url = "https://github.com/zaldih/themery.nvim"
+  },
+  ["todo.nvim"] = {
+    loaded = true,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/start/todo.nvim",
+    url = "https://github.com/AmeerTaweel/todo.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,
@@ -236,8 +246,11 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/tal/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    commands = { "GitGutterDisable" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/tal/.local/share/nvim/site/pack/packer/opt/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-surround"] = {
@@ -257,6 +270,18 @@ time([[Defining packer_plugins]], false)
 time([[Config for obsidian.nvim]], true)
 try_loadstring("\27LJ\2\n‹\1\0\0\5\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\2B\0\2\1K\0\1\0\15workspaces\1\0\1\15workspaces\0\1\0\2\tpath\22~/Documents/notes\tname\frelease\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'GitGutterDisable', function(cmdargs)
+          require('packer.load')({'vim-gitgutter'}, { cmd = 'GitGutterDisable', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-gitgutter'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('GitGutterDisable ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
